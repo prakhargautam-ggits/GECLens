@@ -139,7 +139,12 @@ profile: {group: category, top: 12}
 
 ## Correctness
 
-- Overall and per-type TP/FP/FN equal `errant_compare -cat 3` (see `tests/test_score.py`).
+- Hypothesis M2 files are byte-identical to `errant_parallel`, and overall and per-type TP/FP/FN equal
+  `errant_compare -cat 3`, including ERRANT's choice of annotator when there are several (see `tests/test_score.py`
+  and `tests/test_edge_cases.py`). Check this on your own data with
+  `python scripts/check_against_errant.py src.txt ref.m2 sys1.txt [sys2.txt ...]`.
+- A hand-built case with two annotators covers missed, unnecessary and replacement edits, two target edits in one
+  sentence, an unedited sentence and an empty subset; expected values were worked out by hand.
 - Statistical routines are tested on known cases: identical systems give p = 1, Holm values are checked by hand, and
   bootstrap intervals contain the point estimate.
 - The CI runs the suite on Python 3.9–3.12.
