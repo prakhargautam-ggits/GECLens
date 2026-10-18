@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geclens"
+version = "1.0.0"
+description = "Error-type-targeted evaluation of grammatical error correction systems"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "Prakhar Gautam", email = "prakhargautam@jecjabalpur.ac.in"},
+  {name = "Jitendra Singh Thakur"},
+  {name = "Ashish Mishra"},
+]
+keywords = ["grammatical error correction", "evaluation", "ERRANT", "error types", "significance testing", "NLP"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Text Processing :: Linguistic",
+  "Intended Audience :: Science/Research",
+]
+dependencies = [
+  "errant==3.0.2",
+  "spacy>=3.4,<3.8",
+  "numpy>=1.21",
+  "matplotlib>=3.5",
+  "PyYAML>=6.0",
+  "click>=8.0",  # spaCy 3.7 imports click directly; recent typer releases no longer pull it in
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov>=4"]
+docs = ["mkdocs>=1.5", "mkdocs-material>=9"]
+
+[project.scripts]
+geclens = "geclens.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/prakhargautam-ggits/GECLens"
+Documentation = "https://prakhargautam-ggits.github.io/GECLens/"
+Issues = "https://github.com/prakhargautam-ggits/GECLens/issues"
+
+[tool.setuptools]
+packages = ["geclens"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

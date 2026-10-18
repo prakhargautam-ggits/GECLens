@@ -1,0 +1,18 @@
+# GECLens example configuration (toy data written by the GECLens authors; CC0)
+source: src.txt
+reference: ref.m2
+out_dir: results
+selectors: [R:VERB:SVA, PREP, DET]
+systems:
+  careful: careful.txt
+  eager: eager.txt
+  cautious: cautious.txt
+statistics:
+  bootstrap_resamples: 1000
+  shuffles: 5000
+  measures: [type_only, overcorrection]
+  baseline: cautious
+  seed: 13
+profile:
+  group: category
+  top: 8

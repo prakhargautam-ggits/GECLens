@@ -1,0 +1,11 @@
+__pycache__/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+.geclens_cache/
+m2_cache/
+geclens_out/
+examples/toy/results/
+site/
