@@ -1,6 +1,6 @@
 """GECLens: error-type-targeted evaluation of grammatical error correction systems."""
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 from .types import TypeSelector  # noqa: E402,F401
 from .data import Subsets, build_subsets, reference_stats  # noqa: E402,F401

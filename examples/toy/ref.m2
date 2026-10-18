@@ -42,9 +42,10 @@ S This book was written in 1990 .
 A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||0
 A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||1
 
-S He don't like coffee .
-A 1 2|||R:OTHER|||doesn't|||REQUIRED|||-NONE-|||0
-A 1 2|||R:OTHER|||does not|||REQUIRED|||-NONE-|||1
+S He do n't like coffee .
+A 1 2|||R:VERB:SVA|||does|||REQUIRED|||-NONE-|||0
+A 1 2|||R:VERB:SVA|||does|||REQUIRED|||-NONE-|||1
+A 2 3|||R:CONTR|||not|||REQUIRED|||-NONE-|||1
 
 S I have visited Agra last year .
 A 1 2|||U:VERB:TENSE||||||REQUIRED|||-NONE-|||0
