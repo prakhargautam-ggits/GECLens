@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use GECLens, please cite it as below."
 title: "GECLens: A Python toolkit for error-type-targeted evaluation of grammatical error correction systems"
 version: 1.0.0
+date-released: "2026-10-18"
 license: MIT
 repository-code: "https://github.com/prakhargautam-ggits/GECLens"
 authors:
