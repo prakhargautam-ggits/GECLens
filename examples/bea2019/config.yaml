@@ -1,0 +1,23 @@
+# Case study of the GECLens paper (Section 3.2). Run prepare.sh first.
+source: src.txt
+reference: pillars-of-gec/data/evaluation_sets/bea-dev.m2
+out_dir: results
+selectors: [DET, PREP, VERB:TENSE]
+systems:
+  CTC-Copy: pillars-of-gec/data/system_preds/single_systems/CTC-Copy___bea-dev.txt
+  GECToR-2024: pillars-of-gec/data/system_preds/single_systems/GECToR-2024___bea-dev.txt
+  EditScorer: pillars-of-gec/data/system_preds/single_systems/EditScorer___bea-dev.txt
+  T5-11B: pillars-of-gec/data/system_preds/single_systems/T5-11B___bea-dev.txt
+  UL2-20B: pillars-of-gec/data/system_preds/single_systems/UL2-20B___bea-dev.txt
+  LLaMA-2-7B-FT: pillars-of-gec/data/system_preds/single_systems/Chat-LLaMa-2-7B-FT___bea-dev.txt
+  LLaMA-2-13B-FT: pillars-of-gec/data/system_preds/single_systems/Chat-LLaMa-2-13B-FT___bea-dev.txt
+  Ens-m7: pillars-of-gec/data/system_preds/ensemble_systems/ens_m7___bea-dev.txt
+  GPT-rank: pillars-of-gec/data/system_preds/ensemble_systems/gpt_rank_on_clust3___bea-dev.txt
+statistics:
+  bootstrap_resamples: 2000
+  shuffles: 10000
+  measures: [type_only, overcorrection]
+  seed: 13
+profile:
+  group: category
+  top: 12
