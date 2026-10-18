@@ -5,7 +5,7 @@ article/determiner (DET), preposition (PREP) and verb tense (VERB:TENSE) errors 
 
 ```bash
 ./prepare.sh              # clones grammarly/pillars-of-gec and writes src.txt
-geclens run config.yaml   # about 6.5 minutes on one CPU core, including ERRANT alignment
+geclens run config.yaml   # about 6.5 minutes on two vCPUs, including ERRANT alignment
 ```
 
 The reference file and system outputs are not redistributed here. They come from the
