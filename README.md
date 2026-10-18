@@ -3,7 +3,7 @@
 **Error-type-targeted evaluation of grammatical error correction (GEC) systems.**
 
 [![tests](https://github.com/prakhargautam-ggits/GECLens/actions/workflows/ci.yml/badge.svg)](https://github.com/prakhargautam-ggits/GECLens/actions/workflows/ci.yml)
-[![PyPI](https://img.shields.io/pypi/v/geclens)](https://pypi.org/project/geclens/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23448504.svg)](https://doi.org/10.5281/zenodo.23448504) ![python](https://img.shields.io/badge/python-3.9%E2%80%933.12-blue) ![license](https://img.shields.io/badge/license-MIT-green)
+[![PyPI](https://img.shields.io/pypi/v/geclens)](https://pypi.org/project/geclens/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23449073.svg)](https://doi.org/10.5281/zenodo.23449073) ![python](https://img.shields.io/badge/python-3.9%E2%80%933.12-blue) ![license](https://img.shields.io/badge/license-MIT-green)
 
 Overall F0.5 hides how a system handles a single kind of error. Subject–verb agreement, articles, prepositions and tense
 each make up only a few per cent of all edits. GECLens answers two questions for any ERRANT error type:
@@ -159,7 +159,7 @@ pip install -e ".[dev]" && pytest
 If you use GECLens, please cite the software (see `CITATION.cff`):
 
 > P. Gautam, J. S. Thakur, A. Mishra. *GECLens: A Python toolkit for error-type-targeted evaluation of grammatical error
-> correction systems.* Version 1.0.0, 2026. https://doi.org/10.5281/zenodo.23448504
+> correction systems.* Version 1.0.1, 2026. https://doi.org/10.5281/zenodo.23449073
 
 ## Licence and support
 
