@@ -21,7 +21,7 @@ def test_yaml_runner_end_to_end(data, tmp_path):
     for f in ("scores.csv", "scores.md", "scores.tex", "comparisons.md", "confidence_intervals.json",
               "scatter.png", "profile.png", "subsets.json"):
         assert (d / f).exists(), f
-    comps = json.load(open(d / "comparisons.json"))
+    comps = json.load(open(d / "comparisons.json", encoding="utf-8"))
     assert len(comps) == 4 and all(c["b"] == "cautious" for c in comps)
 
 
