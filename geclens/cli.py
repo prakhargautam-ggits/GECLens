@@ -32,7 +32,7 @@ def _common(p: argparse.ArgumentParser, hyp: bool = True) -> None:
         p.add_argument("--hyp", nargs="+", required=True, metavar="NAME=PATH",
                        help="system outputs (text, one sentence per line, or .m2); NAME= is optional")
     p.add_argument("--type", default="R:VERB:SVA", help="error-type selector, e.g. R:VERB:SVA, DET, 'R:VERB*', 'PREP,DET'")
-    p.add_argument("--tokenise", action="store_true", help="let ERRANT tokenise the inputs (default: pre-tokenised)")
+    p.add_argument("--tokenise", action="store_true", help="system outputs are plain text: tokenise them with spaCy (the source must already match the reference M2)")
 
 
 def main(argv=None) -> int:

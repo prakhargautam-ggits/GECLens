@@ -41,9 +41,9 @@ the GECLens authors and are released under CC0.
 
 | System | Overall F0.5 | Type F0.5 | Type-only F0.5 | Detection F1 | Success | Over-corr. |
 |---|---|---|---|---|---|---|
-| careful | 0.882 | 0.972 | 0.972 | 0.933 | 87.5% | 0.0% |
-| eager | 0.649 | 0.987 | 0.987 | 0.968 | 93.8% | 100.0% |
-| cautious | 0.312 | 0.435 | 0.435 | 0.222 | 12.5% | 0.0% |
+| careful | 0.882 | 0.974 | 0.974 | 0.938 | 88.2% | 0.0% |
+| eager | 0.649 | 0.988 | 0.988 | 0.970 | 94.1% | 100.0% |
+| cautious | 0.312 | 0.417 | 0.417 | 0.211 | 11.8% | 0.0% |
 
 *eager* fixes agreement errors as well as *careful*, but it also rewrites every correct sentence. Type-level F0.5 alone
 would not show this.

@@ -34,14 +34,24 @@ def align_lines(src: List[str], hyp: List[str], tokenise: bool = False, lev: boo
         o, c = o.strip(), c.strip()
         if not o:
             raise ValueError(f"empty source line {i + 1}: ERRANT would skip it and misalign the files")
-        orig = ann.parse(o, tokenise)
-        lines = ["S " + " ".join(t.text for t in orig)]
-        if orig.text.strip() == c:
-            lines.append(NOOP_LINE.format(a=0))
+        if not tokenise:
+            orig = ann.parse(o, False)
+            lines = ["S " + " ".join(t.text for t in orig)]
+            if orig.text.strip() == c:
+                lines.append(NOOP_LINE.format(a=0))
+            else:
+                cor = ann.parse(c, False)
+                for edit in ann.annotate(orig, cor, lev, merge):
+                    lines.append(edit.to_m2(0))
         else:
-            cor = ann.parse(c, tokenise)
-            for edit in ann.annotate(orig, cor, lev, merge):
-                lines.append(edit.to_m2(0))
+            # The source must keep the tokens of the reference M2, so only the system output is tokenised.
+            orig = ann.parse(o, False)
+            cor = ann.parse(c, True)
+            lines = ["S " + " ".join(t.text for t in orig)]
+            edits = [] if orig.text.strip() == cor.text.strip() else ann.annotate(orig, cor, lev, merge)
+            lines.extend(e.to_m2(0) for e in edits)
+            if not edits:
+                lines.append(NOOP_LINE.format(a=0))
         out.append("\n".join(lines))
     return "".join(block + "\n\n" for block in out)  # byte-identical to errant_parallel
 
@@ -64,7 +74,7 @@ def hypothesis_m2(src_path: str, hyp_path: str, cache_dir: Optional[str] = None,
     src, hyp = read_lines(src_path), read_lines(hyp_path)
     cache_dir = cache_dir or os.path.join(os.path.dirname(os.path.abspath(hyp_path)), ".geclens_cache")
     os.makedirs(cache_dir, exist_ok=True)
-    key = _digest("align-v2", "\n".join(src), "\n".join(hyp), str(tokenise))
+    key = _digest("align-v3", "\n".join(src), "\n".join(hyp), str(tokenise))
     out = os.path.join(cache_dir, f"{os.path.splitext(os.path.basename(hyp_path))[0]}.{key}.m2")
     if not os.path.exists(out):
         text = align_lines(src, hyp, tokenise=tokenise)

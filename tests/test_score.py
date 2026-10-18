@@ -52,3 +52,19 @@ def test_hypothesis_m2_byte_identical_to_errant_parallel(data, tmp_path):
     ref = tmp_path / "errant.m2"
     subprocess.run(["errant_parallel", "-orig", src, "-cor", hyp, "-out", str(ref)], check=True, capture_output=True)
     assert open(ours, encoding="utf-8").read() == ref.read_text(encoding="utf-8")
+
+
+def test_tokenise_plain_text_output(data, tmp_path):
+    """A detokenised copy of a system output, scored with tokenise=True, gives the same counts as the original."""
+    import re as _re
+    from geclens.score import score_system
+    src, ref = os.path.join(data, "src.txt"), os.path.join(data, "ref.m2")
+    plain = tmp_path / "plain.txt"
+    lines = open(os.path.join(data, "careful.txt"), encoding="utf-8").read().splitlines()
+    plain.write_text("\n".join(_re.sub(r" ([.,!?;:])", r"\1", l) for l in lines) + "\n", encoding="utf-8")
+    a = score_system("tok", src, ref, os.path.join(data, "careful.txt"), cache_dir=str(tmp_path / "a"))
+    b = score_system("plain", src, ref, str(plain), cache_dir=str(tmp_path / "b"), tokenise=True)
+    for m in ("overall", "type", "type_only", "detection"):
+        assert (a.metrics[m]["tp"], a.metrics[m]["fp"], a.metrics[m]["fn"]) == \
+               (b.metrics[m]["tp"], b.metrics[m]["fp"], b.metrics[m]["fn"])
+    assert a.metrics["overcorrection"] == b.metrics["overcorrection"]
