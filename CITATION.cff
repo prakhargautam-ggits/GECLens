@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use GECLens, please cite it as below."
+title: "GECLens: A Python toolkit for error-type-targeted evaluation of grammatical error correction systems"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/prakhargautam-ggits/GECLens"
+authors:
+  - family-names: Gautam
+    given-names: Prakhar
+    orcid: "https://orcid.org/0009-0007-6539-4927"
+    affiliation: "Jabalpur Engineering College, Jabalpur, India"
+  - family-names: Thakur
+    given-names: Jitendra Singh
+    orcid: "https://orcid.org/0000-0001-6073-3933"
+    affiliation: "Jabalpur Engineering College, Jabalpur, India"
+  - family-names: Mishra
+    given-names: Ashish
+    orcid: "https://orcid.org/0000-0002-2604-3370"
+    affiliation: "Gyan Ganga Institute of Technology and Sciences, Jabalpur, India"
+keywords: [grammatical error correction, evaluation, ERRANT, error types, significance testing]

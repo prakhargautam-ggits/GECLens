@@ -1,0 +1,11 @@
+site_name: GECLens
+site_description: Error-type-targeted evaluation of grammatical error correction systems
+repo_url: https://github.com/prakhargautam-ggits/GECLens
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Measures: measures.md
+  - Command line: cli.md
+  - Python API: api.md
+  - Configuration: config.md
