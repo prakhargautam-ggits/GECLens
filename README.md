@@ -27,14 +27,16 @@ python -m spacy download en_core_web_sm
 ```
 
 Requirements: Python 3.9–3.12, ERRANT 3.0.2, spaCy 3.4–3.7 with `en_core_web_sm`, NumPy, Matplotlib and PyYAML.
-(If you installed version 1.0.1 and see "numpy.dtype size changed" on import, upgrade to 1.0.2 with
-`pip install -U geclens`.) GECLens
-runs on Linux, macOS and Windows.
+GECLens runs on Linux, macOS and Windows. (If you installed version 1.0.1 and see "numpy.dtype size changed" on
+import, upgrade to 1.0.2 with `pip install -U geclens`.)
 
 ## Quick start (toy data included)
 
+The example data are in this repository (they are not part of the pip package), so clone it first:
+
 ```bash
-cd examples/toy
+git clone https://github.com/prakhargautam-ggits/GECLens
+cd GECLens/examples/toy
 geclens run config.yaml          # about 5 seconds
 ```
 

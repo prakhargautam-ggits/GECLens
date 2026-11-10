@@ -30,8 +30,11 @@ runs on Linux, macOS and Windows.
 
 ## Quick start
 
+The example data are in the GitHub repository (they are not part of the pip package), so clone it first:
+
 ```bash
-cd examples/toy
+git clone https://github.com/prakhargautam-ggits/GECLens
+cd GECLens/examples/toy
 geclens run config.yaml          # about 5 seconds
 ```
 
