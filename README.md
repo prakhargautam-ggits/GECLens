@@ -26,7 +26,9 @@ pip install geclens            # or, from source: pip install -e .
 python -m spacy download en_core_web_sm
 ```
 
-Requirements: Python 3.9–3.12, ERRANT 3.0.2, spaCy 3.4–3.7 with `en_core_web_sm`, NumPy, Matplotlib and PyYAML. GECLens
+Requirements: Python 3.9–3.12, ERRANT 3.0.2, spaCy 3.4–3.7 with `en_core_web_sm`, NumPy, Matplotlib and PyYAML.
+(If you installed version 1.0.1 and see "numpy.dtype size changed" on import, upgrade to 1.0.2 with
+`pip install -U geclens`.) GECLens
 runs on Linux, macOS and Windows.
 
 ## Quick start (toy data included)

@@ -4,15 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "geclens"
-version = "1.0.1"
+version = "1.0.2"
 description = "Error-type-targeted evaluation of grammatical error correction systems"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.9,<3.13"
 license = {text = "MIT"}
 authors = [
-  {name = "Prakhar Gautam", email = "prakhargautam@jecjabalpur.ac.in"},
+  {name = "Prakhar Gautam"},
   {name = "Jitendra Singh Thakur"},
   {name = "Ashish Mishra"},
+]
+maintainers = [
+  {name = "Prakhar Gautam", email = "prakhargautam@jecjabalpur.ac.in"},
 ]
 keywords = ["grammatical error correction", "evaluation", "ERRANT", "error types", "significance testing", "NLP"]
 classifiers = [
@@ -26,6 +29,7 @@ classifiers = [
 dependencies = [
   "errant==3.0.2",
   "spacy>=3.4,<3.8",
+  "thinc>=8.2.5,<8.3",  # older thinc wheels break with NumPy 2.x ("numpy.dtype size changed")
   "numpy>=1.21",
   "matplotlib>=3.5",
   "PyYAML>=6.0",

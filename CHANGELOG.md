@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.2 (2026-11-10)
+
+Maintenance release; scores and outputs are unchanged.
+- Installation fix: `thinc>=8.2.5,<8.3` is now required. A fresh `pip install geclens` could pick an older thinc
+  build together with NumPy 2.x, which fails on import with "numpy.dtype size changed".
+- `requires-python` is now `>=3.9,<3.13`, matching the tested versions (spaCy 3.7 has no Python 3.13 wheels).
+- Package metadata lists all three authors.
+
 ## 1.0.1 (2026-10-18)
 
 - `tokenise` option: only the system outputs are tokenised; the source keeps the tokens of the reference M2.
